@@ -1,5 +1,7 @@
 # IMRemoval
 
+[點此閱讀本文的中文版本](docs/README.md)
+
 The tool to help you uninstall third-party Input Methods for modern macOS, requiring at least macOS 12 Monterey.
 
 (c) 2023 and onwards The vChewing Project (MIT License).

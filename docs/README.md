@@ -1,5 +1,7 @@
 # 輸入法移除工具（IMRemoval）
 
+[倉庫](https://github.com/vChewing/IMRemoval/) | [下載](https://github.com/vChewing/IMRemoval/releases/)
+
 該工具會幫助您卸除 macOS 系統內安裝了的第三方輸入法，可用於 macOS 12 開始的系統。
 
 (c) 2023 and onwards The vChewing Project (MIT License).
