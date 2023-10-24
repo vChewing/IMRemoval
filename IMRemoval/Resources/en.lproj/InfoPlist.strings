@@ -8,4 +8,4 @@
 
 CFBundleName = "Input Methods Removal Tool";
 CFBundleDisplayName = "Input Methods Removal Tool";
-NSHumanReadableCopyright = "(c) 2023 and onwards The vChewing Project (MIT-NTL License).";
+NSHumanReadableCopyright = "(c) 2023 and onwards The vChewing Project (MIT License).";
