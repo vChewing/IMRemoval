@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5BBBCAF42AE7F3CE00633106 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BBBCAF62AE7F3CE00633106 /* Localizable.strings */; };
+		5BBBCAFE2AE81F3500633106 /* FolderMonitor in Frameworks */ = {isa = PBXBuildFile; productRef = 5BBBCAFD2AE81F3500633106 /* FolderMonitor */; };
 		5BF1F4CF2AE764810049046F /* IMRemovalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */; };
 		5BF1F4D12AE764810049046F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D02AE764810049046F /* ContentView.swift */; };
 		5BF1F4D32AE764830049046F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D22AE764830049046F /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBBCAFE2AE81F3500633106 /* FolderMonitor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +134,9 @@
 			dependencies = (
 			);
 			name = IMRemoval;
+			packageProductDependencies = (
+				5BBBCAFD2AE81F3500633106 /* FolderMonitor */,
+			);
 			productName = IMRemoval;
 			productReference = 5BF1F4CB2AE764810049046F /* IMRemoval.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +167,9 @@
 				Base,
 			);
 			mainGroup = 5BF1F4C22AE764810049046F;
+			packageReferences = (
+				5BBBCAFC2AE81F3500633106 /* XCLocalSwiftPackageReference "Packages/DanielGalasko_FolderMonitor" */,
+			);
 			productRefGroup = 5BF1F4CC2AE764810049046F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -424,6 +432,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5BBBCAFC2AE81F3500633106 /* XCLocalSwiftPackageReference "Packages/DanielGalasko_FolderMonitor" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DanielGalasko_FolderMonitor;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BBBCAFD2AE81F3500633106 /* FolderMonitor */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FolderMonitor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BF1F4C32AE764810049046F /* Project object */;
 }

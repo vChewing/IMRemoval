@@ -7,6 +7,7 @@
 // requirements defined in MIT License.
 
 import AppKit
+import FolderMonitor
 import SwiftUI
 
 public class ViewModel: ObservableObject {
@@ -15,7 +16,28 @@ public class ViewModel: ObservableObject {
   @Published var rootBundles: [BundleItem] = []
   @Published var userBundles: [BundleItem] = []
 
-  private init() {}
+  private var folderMonitorRoot: FolderMonitor?
+  private var folderMonitorUser: FolderMonitor?
+
+  private init() {
+    let pathRoot = NSSearchPathForDirectoriesInDomains(.inputMethodsDirectory, .localDomainMask, true).first
+    if let pathRoot = pathRoot {
+      folderMonitorRoot = .init(url: URL(filePath: pathRoot))
+      folderMonitorRoot?.folderDidChange = { [weak self] in
+        guard let self = self else { return }
+        self.scan(global: true)
+      }
+    }
+
+    let pathUser = NSSearchPathForDirectoriesInDomains(.inputMethodsDirectory, .userDomainMask, true).first
+    if let pathUser = pathUser {
+      folderMonitorUser = .init(url: URL(filePath: pathUser))
+      folderMonitorUser?.folderDidChange = { [weak self] in
+        guard let self = self else { return }
+        self.scan(global: false)
+      }
+    }
+  }
 
   public var nothingTicked: Bool {
     rootBundles.filter(\.ticked).count + userBundles.filter(\.ticked).count == 0
