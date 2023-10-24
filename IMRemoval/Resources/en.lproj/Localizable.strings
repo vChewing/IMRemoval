@@ -1,6 +1,6 @@
 "i18n:button.openPublicFolder" = "Open Public IME Folder";
 "i18n:button.openUserSpaceFolder" = "Open Current User IME Folder";
-"i18n:button.removeTickedIME" = "Remove Ticked Input Methods";
+"i18n:button.removeTickedIME" = "Remove Ticked IMEs";
 "i18n:button.rescan" = "Re-Scan";
 "i18n:dialog.button.Cancel" = "Cancel";
 "i18n:dialog.button.OK" = "OK";
@@ -8,5 +8,6 @@
 "i18n:fieldName.imeBundlePath.public" = "Path (Root-Level Installation)";
 "i18n:fieldName.imeTitle" = "Name";
 "i18n:notice.nothingSelected" = "You did not selected any Input Method.";
-"i18n:notice.willTrashTheTickedItems.description" = "If you have checked some IMEs situated in the Root-Level Installation folder, a Finder window may pop up on failure of the relocation. This Finder window can allow you manually remove them by yourself.";
+"i18n:notice.runningIMEs" = "Running IMEs:";
+"i18n:notice.willTrashTheTickedItems.description" = "If you have checked some IMEs situated in the Root-Level Installation folder, a Finder window may pop up on failure of the relocation. This Finder window can allow you manually trash them by yourself.\n\nYou may need to re-login into macOS to empty the trash, unless the trashed IMEs are not running.";
 "i18n:notice.willTrashTheTickedItems.title" = "This will relocate all ticked items to the Trash. Do you want to continue?";

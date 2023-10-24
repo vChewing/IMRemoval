@@ -66,31 +66,31 @@ public class ViewModel: ObservableObject {
     }
   }
 
-  public func trash() {
+  @discardableResult public func trash() -> [BundleItem] {
+    var runningApps = [NSRunningApplication]()
     let toTrashA: [BundleItem] = rootBundles.filter(\.ticked)
     let toTrashB: [BundleItem] = userBundles.filter(\.ticked)
     var toTrash: [BundleItem] = toTrashA + toTrashB
     toTrash.append(contentsOf: userBundles.filter(\.ticked))
     var urls = [URL]()
     toTrash.forEach { bundleItem in
-      if let executableName = bundleItem.executableName {
-        let killTask = Process()
-        killTask.launchPath = "/usr/bin/killall"
-        killTask.arguments = [executableName]
-        killTask.launch()
-        killTask.waitUntilExit()
-      }
       do {
         try FileManager.default.trashItem(at: bundleItem.url, resultingItemURL: nil)
       } catch {
         urls.append(bundleItem.url)
       }
+      runningApps.append(
+        contentsOf: NSRunningApplication.runningApplications(
+          withBundleIdentifier: bundleItem.identifier ?? ""
+        )
+      )
     }
     if !urls.isEmpty {
       NSWorkspace.shared.activateFileViewerSelecting(urls)
     }
     if !toTrashA.isEmpty { scan(global: true) }
     if !toTrashB.isEmpty { scan(global: false) }
+    return runningApps.map(\.asBundleItem)
   }
 }
 
@@ -100,13 +100,15 @@ public struct BundleItem: Hashable, Identifiable {
   public var url: URL
   public var path: String
   public var iconString: String
+  public var identifier: String?
   public var executableName: String?
 
-  public init(ticked: Bool = false, title: String, url: URL, iconString: String, executableName: String?) {
+  public init(ticked: Bool = false, title: String, url: URL, iconString: String, identifier: String?, executableName: String?) {
     self.ticked = ticked
     self.title = title
     self.url = url
     self.iconString = iconString
+    self.identifier = identifier
     self.executableName = executableName
     path = url.path(percentEncoded: false)
   }
@@ -127,6 +129,7 @@ public extension Bundle {
     .init(
       title: bundleTitle, url: bundleURL,
       iconString: iconPath,
+      identifier: bundleIdentifier,
       executableName: executableURL?.lastPathComponent
     )
   }
@@ -142,5 +145,29 @@ public extension Bundle {
     }
     let result = bundleURL.appending(path: "Contents/Resources/\(iconStr)").path(percentEncoded: false)
     return result
+  }
+}
+
+public extension NSRunningApplication {
+  var asBundleItem: BundleItem {
+    guard let url = bundleURL, let bundle = Bundle(url: url) else {
+      return .init(
+        title: bundleTitle, url: bundleURL ?? executableURL ?? URL(fileURLWithPath: "/dev/null"),
+        iconString: iconPath,
+        identifier: bundleIdentifier,
+        executableName: executableURL?.lastPathComponent
+      )
+    }
+    return bundle.asBundleItem
+  }
+
+  var bundleTitle: String {
+    guard let url = bundleURL, let bundle = Bundle(url: url) else { return "PID: \(processIdentifier)" }
+    return bundle.bundleTitle
+  }
+
+  var iconPath: String {
+    guard let url = bundleURL, let bundle = Bundle(url: url) else { return "" }
+    return bundle.iconPath
   }
 }

@@ -1,4 +1,4 @@
-"i18n:button.openPublicFolder" = "开启卷宗层目录输入法安装目录";
+"i18n:button.openPublicFolder" = "开启卷宗根层级输入法安装目录";
 "i18n:button.openUserSpaceFolder" = "开启当前用户输入法安装目录";
 "i18n:button.removeTickedIME" = "移除选中的输入法";
 "i18n:button.rescan" = "再次扫描";
@@ -8,5 +8,6 @@
 "i18n:fieldName.imeBundlePath.public" = "档案路径 (卷宗根目录层级安装)";
 "i18n:fieldName.imeTitle" = "输入法名称";
 "i18n:notice.nothingSelected" = "您还没选择要删除的输入法";
-"i18n:notice.willTrashTheTickedItems.description" = "如果您有勾选那些被安装到卷宗根目录层级的输入法的话，则会在自动移除失败时自动叫出访达视窗、由您亲自移除相关的输入法程序包。";
+"i18n:notice.runningIMEs" = "正在运行的输入法：";
+"i18n:notice.willTrashTheTickedItems.description" = "如果您有勾选那些被安装到卷宗根目录层级的输入法的话，则会在自动移除失败时自动叫出访达视窗、由您亲自将相关的输入法程序包移入垃圾桶。\n\n您可能需要重新登入才可以清空垃圾桶，除非被您移入的输入法没有在运行。";
 "i18n:notice.willTrashTheTickedItems.title" = "这将会将选中的输入法移往垃圾桶。您确定要继续吗？";

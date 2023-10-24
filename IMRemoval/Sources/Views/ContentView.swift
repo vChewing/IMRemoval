@@ -12,10 +12,41 @@ struct ContentView: View {
   @ObservedObject var viewModel = ViewModel.shared
   @State private var highlightedRoot: URL?
   @State private var highlightedUser: URL?
+  @State private var highlightedRunning: URL?
   @State private var sortOrder = [KeyPathComparator(\BundleItem.path)]
-  @State private var alertTitle = "i18n:notice.willTrashTheTickedItems.title".i18n
-  @State private var alertDescription = "i18n:notice.willTrashTheTickedItems.description".i18n
+  @State private var runningResults: [BundleItem] = []
+  @State private var alertState: AlertState = .null {
+    willSet {
+      switch newValue {
+      case .null: showAlert = false
+      default: showAlert = true
+      }
+    }
+  }
+
   @State private var showAlert = false
+
+  enum AlertState {
+    case null
+    case promptForRemoval
+    case listingRunningIMEsThatRemoved
+
+    var title: String {
+      switch self {
+      case .null: ""
+      case .promptForRemoval: "i18n:notice.willTrashTheTickedItems.title".i18n
+      case .listingRunningIMEsThatRemoved: "i18n:notice.runningIMEs".i18n
+      }
+    }
+
+    var message: String? {
+      switch self {
+      case .null: nil
+      case .promptForRemoval: "i18n:notice.willTrashTheTickedItems.description".i18n
+      case .listingRunningIMEsThatRemoved: nil
+      }
+    }
+  }
 
   var body: some View {
     VStack(spacing: 5) {
@@ -68,25 +99,50 @@ struct ContentView: View {
           }
         }
         Button {
-          showAlert = true
+          alertState = .promptForRemoval
         } label: {
           Label(title: { Text("i18n:button.removeTickedIME").bold() }, icon: { Image(systemName: "trash") })
         }
         .disabled(viewModel.nothingTicked)
-        .alert(alertTitle, isPresented: $showAlert) {
+        .alert(alertState.title, isPresented: $showAlert) {
           Button("i18n:dialog.button.OK") {
-            showAlert = false
             Task {
               withAnimation {
-                viewModel.trash()
+                switch alertState {
+                case .listingRunningIMEsThatRemoved:
+                  alertState = .null
+                  runningResults.removeAll()
+                case .null: break
+                case .promptForRemoval:
+                  runningResults = viewModel.trash()
+                  if runningResults.isEmpty {
+                    alertState = .null
+                  } else {
+                    alertState = .listingRunningIMEsThatRemoved
+                  }
+                }
               }
             }
           }
-          Button("i18n:dialog.button.Cancel") {
-            showAlert = false
+          if alertState == .promptForRemoval {
+            Button("i18n:dialog.button.Cancel") {
+              alertState = .null
+            }
           }
         } message: {
-          Text(alertDescription)
+          switch alertState {
+          case .null: EmptyView()
+          case .promptForRemoval:
+            if let msg = alertState.message {
+              Text(msg)
+            }
+          case .listingRunningIMEsThatRemoved:
+            ForEach(runningResults) { resultItem in
+              HStack {
+                Text("\(resultItem.title) -> \(resultItem.path)")
+              }
+            }
+          }
         }
       }.padding(.bottom, 10).padding([.horizontal], 10)
     }
