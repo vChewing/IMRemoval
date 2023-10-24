@@ -3,7 +3,7 @@
 The tool to help you uninstall third-party Input Methods for modern macOS, requiring at least macOS 12 Monterey.
 
 (c) 2023 and onwards The vChewing Project (MIT License).
-![screenshot-enu](Website/images/screenshot-enu.png)
+![screenshot-enu](docs/images/screenshot-enu.png)
 
 > Disclaimer:
 > 1. This app (starting from v2.x) has no relationship with the `2008-2018 © Zonble`'s app (v1.x) which is designed for PowerPC, regardless the app names are the same. However, this repository inherits most parts of the README.md file written by Zonble to help readers know what can such kind of an app do for the users, considering that both mine and his apps are made for same purposes (regardless in different era).
