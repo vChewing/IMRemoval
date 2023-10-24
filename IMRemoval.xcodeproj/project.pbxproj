@@ -12,6 +12,7 @@
 		5BF1F4D32AE764830049046F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D22AE764830049046F /* Assets.xcassets */; };
 		5BF1F4D62AE764830049046F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D52AE764830049046F /* Preview Assets.xcassets */; };
 		5BF1F4EA2AE76B7B0049046F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4E42AE767E70049046F /* InfoPlist.strings */; };
+		5BF1F4EC2AE76C4D0049046F /* TISInputSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4EB2AE76C4D0049046F /* TISInputSourceExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5BF1F4E52AE767E90049046F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5BF1F4E62AE767EC0049046F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5BF1F4E82AE769670049046F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF1F4EB2AE76C4D0049046F /* TISInputSourceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TISInputSourceExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,9 @@
 		5BF1F4E72AE768290049046F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */,
 				5BF1F4D02AE764810049046F /* ContentView.swift */,
+				5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */,
+				5BF1F4EB2AE76C4D0049046F /* TISInputSourceExtension.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF1F4D12AE764810049046F /* ContentView.swift in Sources */,
+				5BF1F4EC2AE76C4D0049046F /* TISInputSourceExtension.swift in Sources */,
 				5BF1F4CF2AE764810049046F /* IMRemovalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
