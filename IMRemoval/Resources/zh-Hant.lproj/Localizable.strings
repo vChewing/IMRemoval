@@ -1,0 +1,12 @@
+"i18n:button.openPublicFolder" = "开启卷宗层目录输入法安装目录";
+"i18n:button.openUserSpaceFolder" = "开启当前使用者输入法安装目录";
+"i18n:button.removeTickedIME" = "移除選中的輸入法";
+"i18n:button.rescan" = "再次扫描";
+"i18n:dialog.button.Cancel" = "取消";
+"i18n:dialog.button.OK" = "確定";
+"i18n:fieldName.imeBundlePath.currentUser" = "檔案路徑 (當前使用者目錄內安裝)";
+"i18n:fieldName.imeBundlePath.public" = "檔案路徑 (卷宗根目錄層級安裝)";
+"i18n:fieldName.imeTitle" = "輸入法名稱";
+"i18n:notice.nothingSelected" = "您還沒有選擇要刪除的輸入法";
+"i18n:notice.willTrashTheTickedItems.description" = "如果您有勾選那些被安裝到卷宗根目錄層級的輸入法的話，則會在自動移除失敗時自動叫出檔案總管視窗、由您親自移除相關的輸入法程式包。";
+"i18n:notice.willTrashTheTickedItems.title" = "這將會將選中的輸入法移往垃圾桶。您確定要繼續嗎？";

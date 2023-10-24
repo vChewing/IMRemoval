@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BBBCAF42AE7F3CE00633106 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BBBCAF62AE7F3CE00633106 /* Localizable.strings */; };
 		5BF1F4CF2AE764810049046F /* IMRemovalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */; };
 		5BF1F4D12AE764810049046F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D02AE764810049046F /* ContentView.swift */; };
 		5BF1F4D32AE764830049046F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D22AE764830049046F /* Assets.xcassets */; };
 		5BF1F4D62AE764830049046F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4D52AE764830049046F /* Preview Assets.xcassets */; };
 		5BF1F4EA2AE76B7B0049046F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1F4E42AE767E70049046F /* InfoPlist.strings */; };
-		5BF1F4EC2AE76C4D0049046F /* TISInputSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4EB2AE76C4D0049046F /* TISInputSourceExtension.swift */; };
+		5BF1F4F02AE76D0B0049046F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1F4EF2AE76D0B0049046F /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BBBCAF52AE7F3CE00633106 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BBBCAF72AE7F3D000633106 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5BBBCAF82AE7F3D200633106 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5BF1F4CB2AE764810049046F /* IMRemoval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMRemoval.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMRemovalApp.swift; sourceTree = "<group>"; };
 		5BF1F4D02AE764810049046F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,7 +30,7 @@
 		5BF1F4E52AE767E90049046F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5BF1F4E62AE767EC0049046F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5BF1F4E82AE769670049046F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BF1F4EB2AE76C4D0049046F /* TISInputSourceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TISInputSourceExtension.swift; sourceTree = "<group>"; };
+		5BF1F4EF2AE76D0B0049046F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF1F4CD2AE764810049046F /* IMRemoval */,
+				5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */,
 				5BF1F4CC2AE764810049046F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,9 +83,10 @@
 		5BF1F4E12AE767B80049046F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5BF1F4D22AE764830049046F /* Assets.xcassets */,
 				5BF1F4E82AE769670049046F /* Info.plist */,
 				5BF1F4E42AE767E70049046F /* InfoPlist.strings */,
-				5BF1F4D22AE764830049046F /* Assets.xcassets */,
+				5BBBCAF62AE7F3CE00633106 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -88,11 +94,26 @@
 		5BF1F4E72AE768290049046F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5BF1F4D02AE764810049046F /* ContentView.swift */,
-				5BF1F4CE2AE764810049046F /* IMRemovalApp.swift */,
-				5BF1F4EB2AE76C4D0049046F /* TISInputSourceExtension.swift */,
+				5BF1F4EE2AE76CF90049046F /* Modules */,
+				5BF1F4ED2AE76CE60049046F /* Views */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		5BF1F4ED2AE76CE60049046F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BF1F4D02AE764810049046F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5BF1F4EE2AE76CF90049046F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5BF1F4EF2AE76D0B0049046F /* ViewModel.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF1F4EA2AE76B7B0049046F /* InfoPlist.strings in Resources */,
+				5BBBCAF42AE7F3CE00633106 /* Localizable.strings in Resources */,
 				5BF1F4D62AE764830049046F /* Preview Assets.xcassets in Resources */,
 				5BF1F4D32AE764830049046F /* Assets.xcassets in Resources */,
 			);
@@ -169,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF1F4D12AE764810049046F /* ContentView.swift in Sources */,
-				5BF1F4EC2AE76C4D0049046F /* TISInputSourceExtension.swift in Sources */,
+				5BF1F4F02AE76D0B0049046F /* ViewModel.swift in Sources */,
 				5BF1F4CF2AE764810049046F /* IMRemovalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +199,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5BBBCAF62AE7F3CE00633106 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BBBCAF52AE7F3CE00633106 /* en */,
+				5BBBCAF72AE7F3D000633106 /* zh-Hans */,
+				5BBBCAF82AE7F3D200633106 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5BF1F4E42AE767E70049046F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

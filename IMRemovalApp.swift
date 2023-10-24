@@ -12,6 +12,8 @@ struct IMRemovalApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
+    }.commands {
+      CommandGroup(replacing: CommandGroupPlacement.newItem) {}
     }
   }
 }
