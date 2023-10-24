@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  IMRemoval
+
+  Created by ShikiSuen on 2023/10/24.
+  
+*/
+
+CFBundleName = "Input Methods Removal Tool";
+CFBundleDisplayName = "Input Methods Removal Tool";
+NSHumanReadableCopyright = "(c) 2023 and onwards The vChewing Project (MIT-NTL License).";
