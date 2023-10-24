@@ -18,7 +18,7 @@ public class ViewModel: ObservableObject {
   private init() {
     let pathRoot = NSSearchPathForDirectoriesInDomains(.inputMethodsDirectory, .localDomainMask, true).first
     if let pathRoot = pathRoot {
-      folderMonitorRoot = .init(url: URL(filePath: pathRoot))
+      folderMonitorRoot = .init(url: URL(fileURLWithPath: pathRoot))
       folderMonitorRoot?.folderDidChange = { [weak self] in
         guard let self = self else { return }
         self.scan(global: true)
@@ -27,7 +27,7 @@ public class ViewModel: ObservableObject {
 
     let pathUser = NSSearchPathForDirectoriesInDomains(.inputMethodsDirectory, .userDomainMask, true).first
     if let pathUser = pathUser {
-      folderMonitorUser = .init(url: URL(filePath: pathUser))
+      folderMonitorUser = .init(url: URL(fileURLWithPath: pathUser))
       folderMonitorUser?.folderDidChange = { [weak self] in
         guard let self = self else { return }
         self.scan(global: false)
@@ -51,7 +51,7 @@ public class ViewModel: ObservableObject {
       let contents = (try? FileManager.default.contentsOfDirectory(atPath: pathStr)) ?? [String]()
       guard !contents.isEmpty else { return }
       contents.forEach { contentStr in
-        let url = URL(filePath: pathStr).appending(path: contentStr)
+        let url = URL(fileURLWithPath: pathStr).appendingPathComponent(contentStr)
         guard let bundle = Bundle(url: url) else { return }
         if global {
           rootBundles.append(bundle.asBundleItem)
@@ -106,7 +106,7 @@ public struct BundleItem: Hashable, Identifiable {
     self.iconString = iconString
     self.identifier = identifier
     self.executableName = executableName
-    path = url.path(percentEncoded: false)
+    path = url.path
   }
 
   public var id: URL { url }
@@ -139,7 +139,7 @@ public extension Bundle {
     if iconStr.suffix(5).lowercased() != ".icns" {
       iconStr.append(".icns")
     }
-    let result = bundleURL.appending(path: "Contents/Resources/\(iconStr)").path(percentEncoded: false)
+    let result = bundleURL.appendingPathComponent("Contents/Resources/\(iconStr)").path
     return result
   }
 }

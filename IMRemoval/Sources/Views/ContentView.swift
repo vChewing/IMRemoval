@@ -82,12 +82,12 @@ struct ContentView: View {
         Button("i18n:button.openPublicFolder") {
           let path = NSSearchPathForDirectoriesInDomains(.inputMethodsDirectory, .localDomainMask, true).first
           guard let path = path else { return }
-          NSWorkspace.shared.open(URL(filePath: path))
+          NSWorkspace.shared.open(URL(fileURLWithPath: path))
         }
         Button("i18n:button.openUserSpaceFolder") {
           let path = NSSearchPathForDirectoriesInDomains(.inputMethodsDirectory, .userDomainMask, true).first
           guard let path = path else { return }
-          NSWorkspace.shared.open(URL(filePath: path))
+          NSWorkspace.shared.open(URL(fileURLWithPath: path))
         }
         Button("i18n:button.rescan") {
           Task {
