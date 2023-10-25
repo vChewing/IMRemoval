@@ -1,0 +1,30 @@
+Uninstalling a 3rd-party input method (IME) from macOS is not as convenient as removing a regular app in the recent 2 decades. This utility helps you locate them directly in Finder and you can immediately manually remove them from the Finder window. If the IME you want to remove is installed in your user-space folder, this app directly relocates it to your trash. This app then notifies you if your trashed IME is still running: It indicates that a relogin (or terminating these processes by yourself) is required before you can successfully clean the trash.
+
+Note: Although this app appears to be the successor of Zonble's IMRemoval app v1.x (2008-2018), this v2.x release (developed by Shiki Suen @ vChewing Project) is completely rewritten from scratch using SwiftUI and modern macOS APIs. It is Sandboxed with no system administrator privilege requirements, and you will see no UAC window called by this app. It also monitors your input method installation folders, automatically update its GUI to show the latest status of your input method installations in your file system.
+
+The Mac App Store version of this app charge fees as a compensation to the cost of the Apple Developer Program fee. Individuals who disagree with this can use Xcode to build the app by themselves using the code repository of this app: https://github.com/vChewing/IMRemoval
+
+Following 3rd-party open-source components are used in this app:
+https://medium.com/over-engineering/monitoring-a-folder-for-changes-in-ios-dc3f8614f902
+
+-------------------
+
+最近二十年來，在 macOS 系統內刪除某款副廠輸入法的步驟遠不如像刪除一般應用程式那樣省心。這款工具會幫助您迅速定位您想刪除的副廠輸入法：直接將其呈現在檔案總管視窗內、方便您直接將它們手動送往垃圾桶。如果您要刪除的輸入法是安裝在當前使用者目錄內的話，則這款工具會直接替您將您勾選的輸入法送往垃圾桶。然後，這款工具會在您送往垃圾桶的輸入法仍在運行時的情況下提醒您，然後您就可以決定是重新登入還是您自己結束相關的執行緒（不然肯定是無法清空此時的垃圾桶的）。
+
+註：與 Zonble 在 2008-2018 年間的同名軟體不同，敝軟體採 SwiftUI 與現代 macOS API 從頭開始徹底重寫。敝軟體經過沙箱處理，不會彈出 UAC 視窗向使用者索取管理員權限。敝軟體還會實時監測系統當中的輸入法安裝目錄、及時更新軟體介面以反應當前檔案系統內的最新的副廠輸入法安裝狀況。
+
+該軟體的 Mac App Store 版本收費，費用僅用於抵銷 Apple Developer Program 年費會員之用途。如對此心存芥蒂者，可使用 Xcode 手動建置該軟體的原始程式碼套件：https://github.com/vChewing/IMRemoval
+
+該 App 所用到的開放軟體組件：
+https://medium.com/over-engineering/monitoring-a-folder-for-changes-in-ios-dc3f8614f902
+
+-------------------
+
+最近二十年来，在 macOS 系统内删除某款副厂输入法的步骤远不如像删除一般应用程式那样省心。这款工具会帮助您迅速定位您想删除的副厂输入法：直接将其呈现在访达视窗内、方便您直接将它们手动送往垃圾桶。如果您要删除的输入法是安装在当前使用者目录内的话，则这款工具会直接替您将您勾选的输入法送往垃圾桶。然后，这款工具会在您送往垃圾桶的输入法仍在运行时的情况下提醒您，然后您就可以决定是重新登入还是您自己结束相关的执行绪（不然肯定是无法清空此时的垃圾桶的）。
+
+注：与 Zonble 在 2008-2018 年间的同名软件不同，敝软件采 SwiftUI 与现代 macOS API 从头开始彻底重写。敝软件经过沙箱处理，不会弹出 UAC 视窗向使用者索取管理员权限。敝软件还会实时监测系统当中的输入法安装目录、及时更新软件介面以反应当前文件系统内的最新的副厂输入法安装状况。
+
+该软件的 Mac App Store 版本收费，费用仅用于抵销 Apple Developer Program 年费会员之用途。如对此心存芥蒂者，可使用 Xcode 手动建置该软件的原始程式码套件：https://github.com/vChewing/IMRemoval
+
+该 App 所用到的开源组件：
+https://medium.com/over-engineering/monitoring-a-folder-for-changes-in-ios-dc3f8614f902
