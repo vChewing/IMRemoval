@@ -14,7 +14,7 @@ The tool to help you uninstall third-party Input Methods for modern macOS, requi
 
 ## Introduction
 
-> This part is written by Zonble, except some edits of mine for modern macOS. As of now, this article describes macOS 12 and later. I removed all contents related to PowerPC.
+> This part is written by Zonble, excepting some edits of mine for modern macOS. As of now, this article describes macOS 12 and later. I removed all contents related to PowerPC.
 
 To install or uninstall an application is quite easy on macOS, what a user need to do is to drag the application bundle to their disk (or download from Mac App Store), or drag the application to the trash can. However, to install or uninstall Input Methods is difficult.
 
