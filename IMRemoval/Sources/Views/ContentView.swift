@@ -55,11 +55,23 @@ struct ContentView: View {
               } else {
                 AnyView(EmptyView())
               }
-              thisLine.bundleIcon
+              thisLine.bundleIcon.onTapGesture(count: 2) {
+                NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: thisLine.path)])
+              }
             }
           }.width(42)
-          TableColumn("i18n:fieldName.imeTitle", value: \.title).width(170)
-          TableColumn("i18n:fieldName.imeBundlePath.public", value: \.path)
+          TableColumn("i18n:fieldName.imeTitle", value: \.title) { thisLine in
+            let url = URL(fileURLWithPath: thisLine.path)
+            Text(thisLine.title).onTapGesture(count: 2) {
+              NSWorkspace.shared.activateFileViewerSelecting([url])
+            }
+          }.width(170)
+          TableColumn("i18n:fieldName.imeBundlePath.public", value: \.path) { thisLine in
+            let url = URL(fileURLWithPath: thisLine.path)
+            Text(thisLine.path).onTapGesture(count: 2) {
+              NSWorkspace.shared.activateFileViewerSelecting([url])
+            }
+          }
         }.frame(minHeight: 200)
         Table(viewModel.userBundles, selection: $highlightedUser, sortOrder: $sortOrder) {
           TableColumn("　", value: \.ticked, comparator: BoolComparator()) { thisLine in
@@ -69,11 +81,23 @@ struct ContentView: View {
               } else {
                 AnyView(EmptyView())
               }
-              thisLine.bundleIcon
+              thisLine.bundleIcon.onTapGesture(count: 2) {
+                NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: thisLine.path)])
+              }
             }
           }.width(42)
-          TableColumn("i18n:fieldName.imeTitle", value: \.title).width(170)
-          TableColumn("i18n:fieldName.imeBundlePath.currentUser", value: \.path)
+          TableColumn("i18n:fieldName.imeTitle", value: \.title) { thisLine in
+            let url = URL(fileURLWithPath: thisLine.path)
+            Text(thisLine.title).onTapGesture(count: 2) {
+              NSWorkspace.shared.activateFileViewerSelecting([url])
+            }
+          }.width(170)
+          TableColumn("i18n:fieldName.imeBundlePath.currentUser", value: \.path) { thisLine in
+            let url = URL(fileURLWithPath: thisLine.path)
+            Text(thisLine.path).onTapGesture(count: 2) {
+              NSWorkspace.shared.activateFileViewerSelecting([url])
+            }
+          }
         }.frame(minHeight: 100)
       }
       .font(.system(.body).monospacedDigit())
