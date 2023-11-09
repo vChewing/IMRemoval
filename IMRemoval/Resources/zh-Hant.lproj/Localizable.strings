@@ -9,5 +9,5 @@
 "i18n:fieldName.imeTitle" = "輸入法名稱";
 "i18n:notice.nothingSelected" = "您還沒有選擇要刪除的輸入法";
 "i18n:notice.runningIMEs" = "正在運行的輸入法：";
-"i18n:notice.willTrashTheTickedItems.description" = "如果您有勾選那些被安裝到卷宗根目錄層級的輸入法的話，則會在自動移除失敗時自動叫出檔案總管視窗、由您親自將相關的輸入法程式包移入垃圾桶。\n\n您可能需要重新登入才可以清空垃圾桶，除非被您移入的輸入法沒有在運行。";
-"i18n:notice.willTrashTheTickedItems.title" = "這將會將選中的輸入法移往垃圾桶。您確定要繼續嗎？";
+"i18n:notice.willTrashTheTickedItems.description" = "免責聲明：Mac App Store 審核委員會不允許一款沙箱應用直接從輸入法安裝目錄移除輸入法程式包。敝 App 會自動叫出 Finder 視窗、自動定位到這些程式包的位置，允許您自行將其拽入垃圾桶。\n\n接下來會自動叫出檔案總管視窗、且會自動選中您要移除的輸入法，由您親自將相關的輸入法程式包移入垃圾桶。\n\n您可能需要重新登入才可以清空垃圾桶，除非被您移入的輸入法沒有在運行。";
+"i18n:notice.willTrashTheTickedItems.title" = "接下來的步驟：";

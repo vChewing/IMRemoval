@@ -9,5 +9,5 @@
 "i18n:fieldName.imeTitle" = "Name";
 "i18n:notice.nothingSelected" = "You did not selected any Input Method.";
 "i18n:notice.runningIMEs" = "Running IMEs:";
-"i18n:notice.willTrashTheTickedItems.description" = "If you have checked some IMEs situated in the Root-Level Installation folder, a Finder window may pop up on failure of the relocation. This Finder window can allow you manually trash them by yourself.\n\nYou may need to re-login into macOS to empty the trash, unless the trashed IMEs are not running.";
-"i18n:notice.willTrashTheTickedItems.title" = "This will relocate all ticked items to the Trash. Do you want to continue?";
+"i18n:notice.willTrashTheTickedItems.description" = "Disclaimer: Mac App Store Review Board does not allow a Sandboxed application to directly remove app bundles from input method directories. This app instead automatically locate the input method bundle you want to remove in Finder, allowing you to trash it.\n\nA Finder window will pop-up with your ticked input methods automatically chosen in it. This Finder window can allow you manually trash them by yourself.\n\nYou may need to re-login into macOS to empty the trash, unless the trashed IMEs are not running.";
+"i18n:notice.willTrashTheTickedItems.title" = "Attention: Next Steps.";
