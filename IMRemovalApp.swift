@@ -1,9 +1,6 @@
-//
-//  IMRemovalApp.swift
-//  IMRemoval
-//
-//  Created by ShikiSuen on 2023/10/24.
-//
+// (c) 2023 and onwards The vChewing Project (MIT License).
+// ====================
+// This code is released under the MIT license (SPDX-License-Identifier: MIT)
 
 import SwiftUI
 
@@ -11,7 +8,9 @@ import SwiftUI
 struct IMRemovalApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView().onDisappear {
+        NSApplication.shared.terminate(self)
+      }
     }.commands {
       CommandGroup(replacing: CommandGroupPlacement.newItem) {}
     }
